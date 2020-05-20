@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// Card error
 enum CardError: LocalizedError {
     case invalidURL
     case thrownError(Error)
