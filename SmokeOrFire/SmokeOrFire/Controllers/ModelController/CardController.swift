@@ -1,20 +1,5 @@
 import UIKit
 
-<<<<<<< HEAD
-import UIKit
-
-
-
-
-
-
-
-
-
-=======
-import Foundation
-import UIKit.UIImage
-
 class CardController {
     
     static let baseURl = URL(string: "https://deckofcardsapi.com/api/deck/new/draw")
@@ -47,6 +32,6 @@ class CardController {
         } .resume()
     }
 }
->>>>>>> ecf68d9274e0b4332c4fd937c3a8c304ec2d8934
+
 
 
