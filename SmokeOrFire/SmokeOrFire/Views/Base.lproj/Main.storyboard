@@ -34,6 +34,9 @@
                                                 <state key="normal" title="Higher">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="HigherButtonTapped:" destination="wO7-7s-veH" eventType="touchUpInside" id="HYX-1t-9MF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxE-Le-wQH">
                                                 <rect key="frame" x="223" y="0.0" width="171" height="30"/>
@@ -41,6 +44,9 @@
                                                 <state key="normal" title="Lower">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="lowerButtonTapped:" destination="wO7-7s-veH" eventType="touchUpInside" id="f4U-A6-ezl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -77,10 +83,31 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Jg-Ps-9cx"/>
                     </view>
+                    <connections>
+                        <outlet property="cardImage" destination="0Vg-g7-0v1" id="xbB-TV-l79"/>
+                        <outlet property="gameResultsLabel" destination="9WD-gA-8YT" id="Lit-1Y-inC"/>
+                        <outlet property="higherButton" destination="O8q-uB-hng" id="alk-ra-h2J"/>
+                        <outlet property="lowerButton" destination="kxE-Le-wQH" id="25J-z4-aBx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfO-SV-DnO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6" y="106"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Mdi-Gw-r1J">
+            <objects>
+                <viewController id="Y7T-wk-D8n" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xlC-Aq-Vvk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Izd-If-WcZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ztz-DR-j2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="127"/>
         </scene>
     </scenes>
 </document>
