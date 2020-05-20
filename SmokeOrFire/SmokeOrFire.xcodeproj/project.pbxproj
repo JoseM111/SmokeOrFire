@@ -93,8 +93,8 @@
 		FE194B7C2475C4430049F023 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE194B7E2475C44E0049F023 /* ViewControllers */,
 				FE194B7D2475C4480049F023 /* ModelController */,
+				FE194B7E2475C44E0049F023 /* ViewControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
