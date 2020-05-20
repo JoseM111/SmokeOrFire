@@ -12,6 +12,9 @@
 		AB52903E2475C20500BCD1D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB52903C2475C20500BCD1D5 /* Main.storyboard */; };
 		AB5290402475C20600BCD1D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB52903F2475C20600BCD1D5 /* Assets.xcassets */; };
 		AB5290432475C20600BCD1D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5290412475C20600BCD1D5 /* LaunchScreen.storyboard */; };
+		FE194B812475C4860049F023 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE194B802475C4860049F023 /* Card.swift */; };
+		FE194B832475C4C60049F023 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE194B822475C4C60049F023 /* CardViewController.swift */; };
+		FE194B852475C4DC0049F023 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE194B842475C4DC0049F023 /* CardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		AB52903F2475C20600BCD1D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB5290422475C20600BCD1D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB5290442475C20600BCD1D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE194B802475C4860049F023 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FE194B822475C4C60049F023 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		FE194B842475C4DC0049F023 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 		AB5290352475C20500BCD1D5 /* SmokeOrFire */ = {
 			isa = PBXGroup;
 			children = (
+				FE194B7F2475C45B0049F023 /* Model */,
+				FE194B7C2475C4430049F023 /* Controllers */,
+				FE194B7B2475C43A0049F023 /* Views */,
 				AB52904A2475C21600BCD1D5 /* Resource */,
 			);
 			path = SmokeOrFire;
@@ -64,12 +73,52 @@
 			children = (
 				AB5290362475C20500BCD1D5 /* AppDelegate.swift */,
 				AB5290382475C20500BCD1D5 /* SceneDelegate.swift */,
-				AB52903C2475C20500BCD1D5 /* Main.storyboard */,
 				AB52903F2475C20600BCD1D5 /* Assets.xcassets */,
-				AB5290412475C20600BCD1D5 /* LaunchScreen.storyboard */,
 				AB5290442475C20600BCD1D5 /* Info.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		FE194B7B2475C43A0049F023 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB52903C2475C20500BCD1D5 /* Main.storyboard */,
+				AB5290412475C20600BCD1D5 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE194B7C2475C4430049F023 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE194B7E2475C44E0049F023 /* ViewControllers */,
+				FE194B7D2475C4480049F023 /* ModelController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE194B7D2475C4480049F023 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				FE194B842475C4DC0049F023 /* CardController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		FE194B7E2475C44E0049F023 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE194B822475C4C60049F023 /* CardViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FE194B7F2475C45B0049F023 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE194B802475C4860049F023 /* Card.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE194B852475C4DC0049F023 /* CardController.swift in Sources */,
+				FE194B832475C4C60049F023 /* CardViewController.swift in Sources */,
 				AB5290372475C20500BCD1D5 /* AppDelegate.swift in Sources */,
+				FE194B812475C4860049F023 /* Card.swift in Sources */,
 				AB5290392475C20500BCD1D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
