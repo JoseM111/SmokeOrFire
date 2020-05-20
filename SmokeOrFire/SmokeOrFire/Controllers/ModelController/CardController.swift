@@ -1,11 +1,3 @@
-//
-//  CardController.swift
-//  SmokeOrFire
-//
-//  Created by Ian Richins on 5/20/20.
-//  Copyright © 2020 Jose Martinez. All rights reserved.
-//
-
 import Foundation
 import UIKit.UIImage
 
@@ -40,6 +32,6 @@ class CardController {
             }
         } .resume()
     }
-    // TO DO Add image fetch request
 }
+
 
