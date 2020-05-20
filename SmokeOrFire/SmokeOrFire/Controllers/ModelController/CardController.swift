@@ -1,4 +1,5 @@
-import UIKit
+import Foundation
+import UIKit.UIImage
 
 class CardController {
     
@@ -32,6 +33,5 @@ class CardController {
         } .resume()
     }
 }
-
 
 
