@@ -1,5 +1,3 @@
-import UIKit
-
 
 import Foundation
 import UIKit.UIImage
@@ -37,5 +35,3 @@ class CardController {
     }
     // TO DO Add image fetch request
 }
-
-
