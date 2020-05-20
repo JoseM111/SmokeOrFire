@@ -24,6 +24,7 @@ class CardViewController: UIViewController {
     
     //MARK: -Actions
     @IBAction func HigherButtonTapped(_ sender: Any) {
+        
     }
     
     @IBAction func lowerButtonTapped(_ sender: Any) {
