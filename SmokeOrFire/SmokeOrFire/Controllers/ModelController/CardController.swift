@@ -40,4 +40,6 @@ class CardController {
             }
         } .resume()
     }
+    // TO DO Add image fetch request
 }
+
