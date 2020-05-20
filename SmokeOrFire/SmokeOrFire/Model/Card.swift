@@ -5,7 +5,7 @@ struct Deck: Codable {
 }
 
 struct Card: Codable {
-    let image: String
+    let image: URL
     let value: String
     let suit: String
 }

@@ -32,6 +32,24 @@ class CardController {
             }
         } .resume()
     }
+    
+    static func fetchImage(for card: Card, completion: @escaping (Result <UIImage, CardError>) -> Void) {
+        // 1 - Prepare URL
+        let imageURL = card.image
+        // 2 - Contact server
+        URLSession.shared.dataTask(with: imageURL) { (data, _, error) in
+            // 3 - Handle errors from the server
+            if let error = error {
+                return completion(.failure(.thrownError(error)))
+            }
+            // 4 - Check for image data
+            guard let data = data else {return completion(.failure(.noData)) }
+            // 5 - Initialize an image from the data
+            guard let image = UIImage(data: data) else { return completion(.failure(.unableToDecode)) }
+            return completion(.success(image))
+        }.resume()
+        
+    }
 }
 
 
