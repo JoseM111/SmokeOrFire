@@ -1,17 +1,6 @@
 import UIKit
 
-<<<<<<< HEAD
-import UIKit
 
-
-
-
-
-
-
-
-
-=======
 import Foundation
 import UIKit.UIImage
 
@@ -46,7 +35,7 @@ class CardController {
             }
         } .resume()
     }
+    // TO DO Add image fetch request
 }
->>>>>>> ecf68d9274e0b4332c4fd937c3a8c304ec2d8934
 
 
