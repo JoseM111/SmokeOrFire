@@ -121,7 +121,6 @@ class CardViewController: UIViewController {
                     self?.fetchImageAndUpdateView(for: card)
                     self?.getValueFromString(for: card.value)
                     self?.ifLower()
-
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
                 }
@@ -214,7 +213,7 @@ class CardViewController: UIViewController {
             }
         }
     }
-    
+  
     func fetchImageAndUpdateView(for card: Card) {
         CardController.fetchImage(for: card) { [weak self]
             result in
@@ -222,11 +221,6 @@ class CardViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let image):
-                    
-                    //self?.gameResultsLabel.text = "Winner Take a Shot"
-                    
-                    //self?.gameResultsLabel.text = "Winner Take a Shot"
-                    
                     self?.cardImage.image = image
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
@@ -238,23 +232,16 @@ class CardViewController: UIViewController {
     func ifHigher() {
         if currentValue >= previousValue {
             self.gameResultsLabel.text = "YOU WIN!"
-            previousValue = currentValue
-            
-            
+            previousValue = currentValue      
         } else {
             self.gameResultsLabel.text = "Take A Shot!"
             previousValue = currentValue         }     }
     func ifLower() {         if currentValue <= previousValue {             self.gameResultsLabel.text = "YOU WIN!"
         previousValue = currentValue
-        
-        
     } else {
         self.gameResultsLabel.text = "Take A Shot!"
         previousValue = currentValue
-        
-        
-        }
-        
+        } 
     }
 
 }// End of Class
