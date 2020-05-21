@@ -100,8 +100,6 @@ class CardViewController: UIViewController {
         }
     }
     
- 
-    
         //MARK: Helper Methods
     func fetchImageAndUpdateView(for card: Card) {
         CardController.fetchImage(for: card) { [weak self]
@@ -125,6 +123,11 @@ class CardViewController: UIViewController {
         currentValue = previousValue
         print(currentValue)
         print(previousValue)
+        currentValue = 0
+      } else {
+        self.gameResultsLabel.text = "Take A Shot!"
+        currentValue = previousValue
+        currentValue = 0
         }
     }
 
