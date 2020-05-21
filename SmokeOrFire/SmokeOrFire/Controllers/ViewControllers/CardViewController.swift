@@ -96,7 +96,10 @@ class CardViewController: UIViewController {
         }
     }
     
+        //MARK: Helper Methods
+
     //MARK: Helper Methods
+
     func fetchImageAndUpdateView(for card: Card) {
         CardController.fetchImage(for: card) { [weak self]
             result in
@@ -116,6 +119,15 @@ class CardViewController: UIViewController {
     func ifHigher() {
         if currentValue >= previousValue {
             self.gameResultsLabel.text = "YOU WIN!"
+        currentValue = previousValue
+
+        print(currentValue)
+        print(previousValue)
+        currentValue = 0
+      } else {
+        self.gameResultsLabel.text = "Take A Shot!"
+        currentValue = previousValue
+        currentValue = 0
             previousValue = currentValue
             print(currentValue)
             print(previousValue)
