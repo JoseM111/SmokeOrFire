@@ -15,6 +15,11 @@ class CardViewController: UIViewController {
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var higherButton: UIButton!
     @IBOutlet weak var lowerButton: UIButton!
+    @IBOutlet weak var startButton: UILabel!
+    
+    //MARK: - Properties
+    var currentValue = 0
+    var previousValue = 0
     
     //MARK: - LifeCyclce
     override func viewDidLoad() {
@@ -24,6 +29,25 @@ class CardViewController: UIViewController {
     }
     
     //MARK: -Actions
+    
+    @IBAction func StartButtonTapped(_ sender: Any) {
+        CardController.fetchedCard { [weak self] result in
+            
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let card):
+                    self?.fetchImageAndUpdateView(for: card)
+                    self?.previousValue = Int(card.value) ?? 0
+                case .failure(let error):
+                    self?.presentErrorToUser(localizedError: error)
+                }
+                
+            }
+            
+        }
+    }
+    
+    
     @IBAction func HigherButtonTapped(_ sender: Any) {
         CardController.fetchedCard { [weak self] result in
             
@@ -31,6 +55,8 @@ class CardViewController: UIViewController {
                 switch result {
                 case .success(let card):
                     self?.fetchImageAndUpdateView(for: card)
+                    self?.currentValue = Int(card.value) ?? 0
+                    self?.ifHigher()
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
                 }
@@ -56,8 +82,9 @@ class CardViewController: UIViewController {
         }
     }
     
-    //MARK: Helper Methods
+ 
     
+        //MARK: Helper Methods
     func fetchImageAndUpdateView(for card: Card) {
         CardController.fetchImage(for: card) { [weak self]
             result in
@@ -74,5 +101,11 @@ class CardViewController: UIViewController {
         }
     }
     
+    func ifHigher() {
+      if currentValue > previousValue {
+            self.gameResultsLabel.text = "YOU WIN!"
+        currentValue = previousValue
+        }
+    }
 
 }// End of Class
