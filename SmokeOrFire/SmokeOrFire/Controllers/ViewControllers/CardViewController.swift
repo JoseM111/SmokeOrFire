@@ -17,9 +17,11 @@ class CardViewController: UIViewController {
     @IBOutlet weak var lowerButton: UIButton!
     @IBOutlet weak var startButton: UILabel!
     
+    
+
     //MARK: - Properties
-    var currentValue = 0
-    var previousValue = 0
+    var currentValue    = 0
+    var previousValue   = 0
     
     //MARK: - LifeCyclce
     override func viewDidLoad() {
@@ -37,7 +39,7 @@ class CardViewController: UIViewController {
                 switch result {
                 case .success(let card):
                     self?.fetchImageAndUpdateView(for: card)
-                    self?.previousValue = Int(card.value) ?? 0
+//                    self?.previousValue = Int(card.value) ?? 0
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
                 }
@@ -55,7 +57,23 @@ class CardViewController: UIViewController {
                 switch result {
                 case .success(let card):
                     self?.fetchImageAndUpdateView(for: card)
-                    self?.currentValue = Int(card.value) ?? 0
+                    
+                    if card.value == "QUEEN" {
+                        self?.currentValue = 12
+                        print(self!.currentValue)
+                    } else if card.value == "KING" {
+                        self?.currentValue = 13
+                        print(self!.currentValue)
+                    }  else if card.value == "JACK" {
+                        self?.currentValue = 11
+                        print(self!.currentValue)
+                    } else  if card.value == "ACE" {
+                        self?.currentValue = 14
+                        print(self!.currentValue)
+                    } else {
+                    let integer = (card.value as NSString).integerValue
+                    print(integer)
+                    }t
                     self?.ifHigher()
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
@@ -90,7 +108,7 @@ class CardViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let image):
-                    self?.gameResultsLabel.text = "Winner Take a Shot"
+//                    self?.gameResultsLabel.text = "Winner Take a Shot"
                     self?.cardImage.image = image
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
@@ -103,6 +121,8 @@ class CardViewController: UIViewController {
       if currentValue > previousValue {
             self.gameResultsLabel.text = "YOU WIN!"
         currentValue = previousValue
+        print(currentValue)
+        print(previousValue)
         currentValue = 0
       } else {
         self.gameResultsLabel.text = "Take A Shot!"
