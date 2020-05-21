@@ -19,7 +19,7 @@ class CardViewController: UIViewController {
     //MARK: - LifeCyclce
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO - Ian enter some code here
+        self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "Felt.png")) 
 
     }
     
