@@ -89,7 +89,7 @@ class CardViewController: UIViewController {
                         let integer = (card.value as NSString).integerValue
                         print(integer)
                     }
-                //                    self?.previousValue = Int(card.value) ?? 0
+                //self?.previousValue = Int(card.value) ?? 0
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
                 }
@@ -105,55 +105,57 @@ class CardViewController: UIViewController {
                 case .success(let card):
                     self?.fetchImageAndUpdateView(for: card)
                     
-                    if card.value == "QUEEN" {
-                        self?.currentValue = 12
-                        print(self!.currentValue)
-                    } else if card.value == "KING" {
-                        self?.currentValue = 13
-                        print(self!.currentValue)
-                    }  else if card.value == "JACK" {
-                        self?.currentValue = 11
-                        print(self!.currentValue)
-                    } else if card.value == "ACE" {
-                        self?.currentValue = 14
-                        print(self!.currentValue)
-                    } else if card.value == "1" {
-                        self?.currentValue = 1
-                        print(self!.currentValue)
-                    } else if card.value == "2" {
-                        self?.currentValue = 2
-                        print(self!.currentValue)
-                    } else if card.value == "3" {
-                        self?.currentValue = 3
-                        print(self!.currentValue)
-                    } else if card.value == "4" {
-                        self?.currentValue = 4
-                        print(self!.currentValue)
-                    } else if card.value == "5" {
-                        self?.currentValue = 5
-                        print(self!.currentValue)
-                    } else if card.value == "6" {
-                        self?.currentValue = 6
-                        print(self!.currentValue)
-                    } else if card.value == "7" {
-                        self?.currentValue = 7
-                        print(self!.currentValue)
-                    } else if card.value == "7" {
-                        self?.currentValue = 7
-                        print(self!.currentValue)
-                    } else if card.value == "8" {
-                        self?.currentValue = 8
-                        print(self!.currentValue)
-                    } else if card.value == "9" {
-                        self?.currentValue = 9
-                        print(self!.currentValue)
-                    } else if card.value == "10" {
-                        self?.currentValue = 10
-                        print(self!.currentValue)
-                    } else {
-                        let integer = (card.value as NSString).integerValue
-                        print(integer)
-                    }
+                    self?.getValueFromString(for: card.value)
+                    
+//                    if card.value == "QUEEN" {
+//                        self?.currentValue = 12
+//                        print(self!.currentValue)
+//                    } else if card.value == "KING" {
+//                        self?.currentValue = 13
+//                        print(self!.currentValue)
+//                    }  else if card.value == "JACK" {
+//                        self?.currentValue = 11
+//                        print(self!.currentValue)
+//                    } else if card.value == "ACE" {
+//                        self?.currentValue = 14
+//                        print(self!.currentValue)
+//                    } else if card.value == "1" {
+//                        self?.currentValue = 1
+//                        print(self!.currentValue)
+//                    } else if card.value == "2" {
+//                        self?.currentValue = 2
+//                        print(self!.currentValue)
+//                    } else if card.value == "3" {
+//                        self?.currentValue = 3
+//                        print(self!.currentValue)
+//                    } else if card.value == "4" {
+//                        self?.currentValue = 4
+//                        print(self!.currentValue)
+//                    } else if card.value == "5" {
+//                        self?.currentValue = 5
+//                        print(self!.currentValue)
+//                    } else if card.value == "6" {
+//                        self?.currentValue = 6
+//                        print(self!.currentValue)
+//                    } else if card.value == "7" {
+//                        self?.currentValue = 7
+//                        print(self!.currentValue)
+//                    } else if card.value == "7" {
+//                        self?.currentValue = 7
+//                        print(self!.currentValue)
+//                    } else if card.value == "8" {
+//                        self?.currentValue = 8
+//                        print(self!.currentValue)
+//                    } else if card.value == "9" {
+//                        self?.currentValue = 9
+//                        print(self!.currentValue)
+//                    } else if card.value == "10" {
+//                        self?.currentValue = 10
+//                        print(self!.currentValue)
+//                    } else {
+//                        let integer = (card.value as NSString).integerValue
+//                        print(integer)
+//                    }
                     self?.ifHigher()
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
@@ -170,55 +172,57 @@ class CardViewController: UIViewController {
                 case .success(let card):
                     self?.fetchImageAndUpdateView(for: card)
                     
-                    if card.value == "QUEEN" {
-                        self?.currentValue = 12
-                        print(self!.currentValue)
-                    } else if card.value == "KING" {
-                        self?.currentValue = 13
-                        print(self!.currentValue)
-                    }  else if card.value == "JACK" {
-                        self?.currentValue = 11
-                        print(self!.currentValue)
-                    } else if card.value == "ACE" {
-                        self?.currentValue = 14
-                        print(self!.currentValue)
-                    } else if card.value == "1" {
-                        self?.currentValue = 1
-                        print(self!.currentValue)
-                    } else if card.value == "2" {
-                        self?.currentValue = 2
-                        print(self!.currentValue)
-                    } else if card.value == "3" {
-                        self?.currentValue = 3
-                        print(self!.currentValue)
-                    } else if card.value == "4" {
-                        self?.currentValue = 4
-                        print(self!.currentValue)
-                    } else if card.value == "5" {
-                        self?.currentValue = 5
-                        print(self!.currentValue)
-                    } else if card.value == "6" {
-                        self?.currentValue = 6
-                        print(self!.currentValue)
-                    } else if card.value == "7" {
-                        self?.currentValue = 7
-                        print(self!.currentValue)
-                    } else if card.value == "7" {
-                        self?.currentValue = 7
-                        print(self!.currentValue)
-                    } else if card.value == "8" {
-                        self?.currentValue = 8
-                        print(self!.currentValue)
-                    } else if card.value == "9" {
-                        self?.currentValue = 9
-                        print(self!.currentValue)
-                    } else if card.value == "10" {
-                        self?.currentValue = 10
-                        print(self!.currentValue)
-                    } else {
-                        let integer = (card.value as NSString).integerValue
-                        print(integer)
-                    }
+                    self?.getValueFromString(for: card.value)
+                    
+//                    if card.value == "QUEEN" {
+//                        self?.currentValue = 12
+//                        print(self!.currentValue)
+//                    } else if card.value == "KING" {
+//                        self?.currentValue = 13
+//                        print(self!.currentValue)
+//                    }  else if card.value == "JACK" {
+//                        self?.currentValue = 11
+//                        print(self!.currentValue)
+//                    } else if card.value == "ACE" {
+//                        self?.currentValue = 14
+//                        print(self!.currentValue)
+//                    } else if card.value == "1" {
+//                        self?.currentValue = 1
+//                        print(self!.currentValue)
+//                    } else if card.value == "2" {
+//                        self?.currentValue = 2
+//                        print(self!.currentValue)
+//                    } else if card.value == "3" {
+//                        self?.currentValue = 3
+//                        print(self!.currentValue)
+//                    } else if card.value == "4" {
+//                        self?.currentValue = 4
+//                        print(self!.currentValue)
+//                    } else if card.value == "5" {
+//                        self?.currentValue = 5
+//                        print(self!.currentValue)
+//                    } else if card.value == "6" {
+//                        self?.currentValue = 6
+//                        print(self!.currentValue)
+//                    } else if card.value == "7" {
+//                        self?.currentValue = 7
+//                        print(self!.currentValue)
+//                    } else if card.value == "7" {
+//                        self?.currentValue = 7
+//                        print(self!.currentValue)
+//                    } else if card.value == "8" {
+//                        self?.currentValue = 8
+//                        print(self!.currentValue)
+//                    } else if card.value == "9" {
+//                        self?.currentValue = 9
+//                        print(self!.currentValue)
+//                    } else if card.value == "10" {
+//                        self?.currentValue = 10
+//                        print(self!.currentValue)
+//                    } else {
+//                        let integer = (card.value as NSString).integerValue
+//                        print(integer)
+//                    }
                     
                     self?.ifLower()
                     
@@ -231,6 +235,40 @@ class CardViewController: UIViewController {
     
     //MARK: Helper Methods
     
+    func getValueFromString(for value: String) {
+        switch value {
+        case "ACE":
+            currentValue = 14
+        case "KING":
+            currentValue = 13
+        case "QUEEN":
+            currentValue = 12
+        case "JACK":
+            currentValue = 11
+        case "10":
+            currentValue = 10
+        case "9":
+            currentValue = 9
+        case "8":
+            currentValue = 8
+        case "7":
+            currentValue = 7
+        case "6":
+            currentValue = 6
+        case "5":
+            currentValue = 5
+        case "4":
+            currentValue = 4
+        case "3":
+            currentValue = 3
+        case "2":
+            currentValue = 2
+        case "1":
+            currentValue = 1
+        default:
+            currentValue = 0
+        }
+    }
     
     func fetchImageAndUpdateView(for card: Card) {
         CardController.fetchImage(for: card) { [weak self]
