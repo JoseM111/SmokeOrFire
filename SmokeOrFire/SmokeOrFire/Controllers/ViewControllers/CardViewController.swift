@@ -18,7 +18,7 @@ class CardViewController: UIViewController {
     @IBOutlet weak var startButton: UILabel!
     
     
-
+    
     //MARK: - Properties
     var currentValue    = 0
     var previousValue   = 0
@@ -27,7 +27,7 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "Felt.png")) 
-
+        
     }
     
     //MARK: -Actions
@@ -39,7 +39,7 @@ class CardViewController: UIViewController {
                 switch result {
                 case .success(let card):
                     self?.fetchImageAndUpdateView(for: card)
-//                    self?.previousValue = Int(card.value) ?? 0
+                //                    self?.previousValue = Int(card.value) ?? 0
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
                 }
@@ -71,16 +71,14 @@ class CardViewController: UIViewController {
                         self?.currentValue = 14
                         print(self!.currentValue)
                     } else {
-                    let integer = (card.value as NSString).integerValue
-                    print(integer)
-                    }t
+                        let integer = (card.value as NSString).integerValue
+                        print(integer)
+                    }
                     self?.ifHigher()
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
                 }
-                
             }
-            
         }
     }
     
@@ -94,13 +92,11 @@ class CardViewController: UIViewController {
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
                 }
-                
             }
-            
         }
     }
     
-        //MARK: Helper Methods
+    //MARK: Helper Methods
     func fetchImageAndUpdateView(for card: Card) {
         CardController.fetchImage(for: card) { [weak self]
             result in
@@ -108,7 +104,7 @@ class CardViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let image):
-//                    self?.gameResultsLabel.text = "Winner Take a Shot"
+                    //                    self?.gameResultsLabel.text = "Winner Take a Shot"
                     self?.cardImage.image = image
                 case .failure(let error):
                     self?.presentErrorToUser(localizedError: error)
@@ -118,17 +114,27 @@ class CardViewController: UIViewController {
     }
     
     func ifHigher() {
-      if currentValue > previousValue {
+        if currentValue >= previousValue {
             self.gameResultsLabel.text = "YOU WIN!"
-        currentValue = previousValue
-        print(currentValue)
-        print(previousValue)
-        currentValue = 0
-      } else {
-        self.gameResultsLabel.text = "Take A Shot!"
-        currentValue = previousValue
-        currentValue = 0
+            previousValue = currentValue
+            print(currentValue)
+            print(previousValue)
+        } else {
+            self.gameResultsLabel.text = "Take A Shot!"
+            previousValue = currentValue
         }
     }
-
+    
+    func ifLower() {
+        if currentValue <= previousValue {
+            self.gameResultsLabel.text = "YOU WIN!"
+            previousValue = currentValue
+            print(currentValue)
+            print(previousValue)
+        } else {
+            self.gameResultsLabel.text = "Take A Shot!"
+            previousValue = currentValue
+        }
+    }
+    
 }// End of Class
